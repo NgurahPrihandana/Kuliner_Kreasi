@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="40dp">
+
+    <TextView
+        android:fontFamily="@font/poppins"
+        android:textFontWeight="600"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Membentuk Akun"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Mohon masukan data diri Anda"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/titik" />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textFontWeight="500"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/black"
+        android:textSize="17sp"/>
+
+    <EditText
+        android:layout_marginTop="5dp"
+        android:id="@+id/edt_email"
+        android:background="@drawable/edit_text_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+
+        />
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textFontWeight="500"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/black"
+        android:textSize="17sp"/>
+
+    <EditText
+        android:layout_marginTop="5dp"
+        android:id="@+id/edt_pass"
+        android:background="@drawable/edit_text_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        />
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Konfirmasi Password"
+        android:textFontWeight="500"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/black"
+        android:textSize="17sp"/>
+
+    <EditText
+        android:layout_marginTop="5dp"
+        android:id="@+id/edt_pass"
+        android:background="@drawable/edit_text_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        />
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Registrasi"
+        android:paddingHorizontal="30sp"
+        android:paddingVertical="15sp"
+        android:layout_gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/sudah_ada_akun"
+        android:textFontWeight="500"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textAlignment="center"/>
+
+
+</LinearLayout>
