@@ -2,4 +2,5 @@
     <string name="app_name">KulinerKreasi</string>
     <string name="selamat">Selamat Datang Sobat Kuliner Kreasi</string>
     <string name="btn_splash_2">Lanjutkan</string>
+    <string name="belum_punya_akun">Belum memiliki akun? <b> Registrasi</b></string>
 </resources>
