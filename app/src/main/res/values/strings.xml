@@ -4,4 +4,6 @@
     <string name="btn_splash_2">Lanjutkan</string>
     <string name="belum_punya_akun">Belum memiliki akun? <b> Registrasi</b></string>
     <string name="sudah_ada_akun">Sudah memiliki akun? <b> Masuk</b></string>
+    <string name="regis_judul">Membentuk Akun</string>
+    <string name="regis_desk">Mohon Masukkan Data Diri Anda</string>
 </resources>

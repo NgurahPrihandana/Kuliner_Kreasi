@@ -6,13 +6,6 @@
     android:orientation="vertical"
     android:padding="40dp">
 
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/logo_login" />
-
     <TextView
         android:fontFamily="@font/poppins"
         android:textFontWeight="600"
@@ -20,7 +13,7 @@
         android:textSize="24sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Selamat Datang Kembali"
+        android:text="@string/regis_judul"
         android:textAlignment="center"
         />
 
@@ -30,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"
-        android:text="Tidak perlu takut gagal. Segala resep disini dijamin 100% berhasil"
+        android:text="@string/regis_desk"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="14sp" />
@@ -46,7 +39,7 @@
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email"
+        android:text="Nama Lengkap"
         android:textFontWeight="500"
         android:fontFamily="@font/poppins"
         android:textColor="@color/black"
@@ -65,7 +58,7 @@
         android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Password"
+        android:text="Nama Pengguna"
         android:textFontWeight="500"
         android:fontFamily="@font/poppins"
         android:textColor="@color/black"
@@ -79,11 +72,67 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         />
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tanggal Lahir"
+        android:textFontWeight="500"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/black"
+        android:textSize="17sp"/>
+
+    <EditText
+        android:layout_marginTop="5dp"
+        android:id="@+id/edt_tgl_lahir"
+        android:background="@drawable/edit_text_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        />
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Alamat"
+        android:textFontWeight="500"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/black"
+        android:textSize="17sp"/>
+
+    <EditText
+        android:layout_marginTop="5dp"
+        android:id="@+id/edt_alamat"
+        android:background="@drawable/edit_text_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        />
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nomor Telepon"
+        android:textFontWeight="500"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/black"
+        android:textSize="17sp"/>
+
+    <EditText
+        android:layout_marginTop="5dp"
+        android:id="@+id/edt_no_telp"
+        android:background="@drawable/edit_text_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        />
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="15dp"
         android:text="Masuk"
         android:paddingHorizontal="30sp"
         android:paddingVertical="15sp"
@@ -91,7 +140,6 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:text="@string/belum_punya_akun"
         android:textFontWeight="500"
         android:fontFamily="@font/poppins"
