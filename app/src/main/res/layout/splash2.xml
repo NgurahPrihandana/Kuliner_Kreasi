@@ -21,26 +21,51 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="265dp"
-        android:layout_height="31dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:textFontWeight="600"
         android:layout_marginTop="56dp"
+        android:textColor="@color/black"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/poppins"
         android:text="@string/selamat"
-        android:textAlignment="center"
 
+        android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton" />
 
     <TextView
-        android:layout_width="275dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="44dp"
+        android:id="@+id/textView2"
+        android:layout_width="345dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins"
         android:text=" Segala resep masakan Indonesia ada di sini"
         android:textAlignment="center"
-
+        android:textColor="@color/black"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/btn_splash_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.215" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

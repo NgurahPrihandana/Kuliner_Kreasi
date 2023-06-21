@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">KulinerKreasi</string>
-    <string name="selamat"><b>Selamat Datang Sobat Kuliner Kreasi</b></string>
+    <string name="selamat">Selamat Datang Sobat Kuliner Kreasi</string>
+    <string name="btn_splash_2">Lanjutkan</string>
 </resources>
