@@ -7,9 +7,9 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="89dp"
-        android:layout_height="52dp"
-        android:text="Testt Miaa | Test Prihannnn"
+        android:layout_width="101dp"
+        android:layout_height="81dp"
+        android:text="Testt Miaa | Test Prihannnn test"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
