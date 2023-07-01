@@ -13,5 +13,6 @@
     <color name="merah">#D13D35</color>
     <color name="abu">#D9D9D9</color>
     <color name="coklat">#A65E5A</color>
+    <color name="abu_bg">#FAFAFA</color>
 
 </resources>
