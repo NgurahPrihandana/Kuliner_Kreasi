@@ -12,10 +12,13 @@
         android:theme="@style/Theme.KulinerKreasi"
         tools:targetApi="31">
         <activity
+            android:name=".MainActivityAdmin"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivityAdmin"
+            android:name=".MainActivityUser"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

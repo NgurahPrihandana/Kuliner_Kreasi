@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_beranda"
+        android:icon="@drawable/baseline_home_24"
+        android:title="Beranda"
+        />
+
+    <item
+        android:id="@+id/nav_cari"
+        android:icon="@drawable/baseline_add_circle_24"
+        android:title="Cari"
+        />
+
+    <item
+        android:id="@+id/nav_resep_user"
+        android:icon="@drawable/baseline_menu_book_24"
+        android:title="Resep"
+        />
+    <item
+        android:id="@+id/nav_berita_user"
+        android:icon="@drawable/baseline_newspaper_24"
+        android:title="Berita"
+        />
+    <item
+        android:id="@+id/nav_profil_user"
+        android:icon="@drawable/baseline_person_24"
+        android:title="Profil"
+        />
+
+</menu>
