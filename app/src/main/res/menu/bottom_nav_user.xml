@@ -9,23 +9,24 @@
 
     <item
         android:id="@+id/nav_cari"
-        android:icon="@drawable/baseline_menu_book_24"
+        android:icon="@drawable/baseline_add_circle_24"
         android:title="Cari"
         />
+
     <item
         android:id="@+id/nav_resep_user"
-        android:icon="@drawable/baseline_add_circle_24"
-        android:title="Tambah"
+        android:icon="@drawable/baseline_menu_book_24"
+        android:title="Resep"
         />
     <item
-        android:id="@+id/_iser"
+        android:id="@+id/nav_berita_user"
         android:icon="@drawable/baseline_newspaper_24"
         android:title="Berita"
         />
     <item
-        android:id="@+id/nav_pengguna"
+        android:id="@+id/nav_profil_user"
         android:icon="@drawable/baseline_person_24"
-        android:title="Pengguna"
+        android:title="Profil"
         />
 
 </menu>
