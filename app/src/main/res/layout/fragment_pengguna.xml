@@ -71,6 +71,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
+                    android:textFontWeight="500"
+                    android:textSize="17sp"
                     android:text="Nama Lengkap : "/>
 
                 <TextView
@@ -78,6 +80,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
+                    android:textFontWeight="500"
+                    android:textSize="17sp"
                     android:text="Putu Mia Setya Utami"/>
             </LinearLayout>
 
@@ -96,6 +100,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
+                    android:textFontWeight="500"
+                    android:textSize="17sp"
                     android:text="Nama Pengguna : "/>
 
                 <TextView
@@ -103,6 +109,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
+                    android:textFontWeight="500"
+                    android:textSize="17sp"
                     android:text="Mia"/>
             </LinearLayout>
 
@@ -121,6 +129,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
+                    android:textFontWeight="500"
+                    android:textSize="17sp"
                     android:text="Tanggal Lahir : "/>
 
                 <TextView
@@ -128,6 +138,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
+                    android:textFontWeight="500"
+                    android:textSize="17sp"
                     android:text="12 Desember 2002"/>
             </LinearLayout>
 
@@ -146,6 +158,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
+                    android:textFontWeight="500"
+                    android:textSize="17sp"
                     android:text="Alamat : "/>
 
                 <TextView
@@ -153,6 +167,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
+                    android:textFontWeight="500"
+                    android:textSize="17sp"
                     android:text="Jalan 1 Apple Park Way, CA"/>
             </LinearLayout>
 
@@ -171,6 +187,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
+                    android:textFontWeight="500"
+                    android:textSize="17sp"
                     android:text="Nomor Telepon : "/>
 
                 <TextView
@@ -178,6 +196,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
+                    android:textFontWeight="500"
+                    android:textSize="17sp"
                     android:text="081385233668"/>
             </LinearLayout>
 
@@ -196,6 +216,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
+                    android:textFontWeight="500"
+                    android:textSize="17sp"
                     android:text="Jenis Kelamin : "/>
 
                 <TextView
@@ -203,6 +225,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
+                    android:textFontWeight="500"
+                    android:textSize="17sp"
                     android:text="Laki-Laki"/>
             </LinearLayout>
 
@@ -221,6 +245,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
+                    android:textFontWeight="500"
+                    android:textSize="17sp"
                     android:text="Email : "/>
 
                 <TextView
@@ -228,6 +254,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
+                    android:textFontWeight="500"
+                    android:textSize="17sp"
                     android:text="miasetya12@gmail.com"/>
             </LinearLayout>
         </LinearLayout>
