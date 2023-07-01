@@ -78,6 +78,7 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
+            android:id="@+id/opsi_tambah_resep"
             android:background="@drawable/shape"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
@@ -123,6 +124,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/opsi_tambah_berita"
                 android:background="@drawable/shape"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
