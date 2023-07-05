@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "638622271820",
+    "project_id": "resepku-c67b9",
+    "storage_bucket": "resepku-c67b9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638622271820:android:bb79824bb99e16501067e9",
+        "android_client_info": {
+          "package_name": "com.example.kulinerkreasi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "638622271820-ogj5odd1p29f5o65mdnfseei4ait4vui.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdCa-tFRbUdbL19uIJMVXIU9r4TFSlCLY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "638622271820-ogj5odd1p29f5o65mdnfseei4ait4vui.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
