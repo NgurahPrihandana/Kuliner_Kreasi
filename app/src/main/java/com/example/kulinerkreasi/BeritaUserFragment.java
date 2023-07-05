@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.kulinerkreasi.entities.Berita;
 import com.example.kulinerkreasi.entities.Resep;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -36,29 +38,25 @@ public class BeritaUserFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_berita_user, container, false);
 
         RecyclerView recyclerView = rootView.findViewById(R.id.recycler_view);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        ResepDataAdapter adapter = new ResepDataAdapter(new ArrayList<>());
+        BeritaDataAdapter adapter = new BeritaDataAdapter(new ArrayList<>());
         recyclerView.setAdapter(adapter);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        CollectionReference collectionRef = db.collection("Reseps");
+        CollectionReference collectionRef = db.collection("Beritas");
 
         collectionRef.get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        List<Resep> datalist = new ArrayList<>();
+                        List<Berita> datalist = new ArrayList<>();
                         for(QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-                            String judul_resep = documentSnapshot.getString("judul_resep");
-                            String minimal = documentSnapshot.getString("minimal");
-                            String maksimal = documentSnapshot.getString("maksimal");
-                            String estimasi = documentSnapshot.getString("estimasi");
-                            String image = documentSnapshot.getString("imageResep");
-                            String bahan = documentSnapshot.getString("bahan");
-                            String langkah = documentSnapshot.getString("langkah");
-                            Resep resep = new Resep(judul_resep, minimal, maksimal, bahan, langkah, estimasi, image);
-                            datalist.add(resep);
+                            String judul_berita = documentSnapshot.getString("judul_berita");
+                            String deskripsi = documentSnapshot.getString("desc_berita");
+                            String image = documentSnapshot.getString("imageBerita");
+                            Berita berita= new Berita(judul_berita, deskripsi, image);
+                            datalist.add(berita);
                         }
 
                         adapter.setData(datalist);

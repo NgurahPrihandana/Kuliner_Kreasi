@@ -37,6 +37,10 @@ public class ResepDataAdapter extends RecyclerView.Adapter<DataResepViewHolder>{
         return dataList.size();
     }
 
+    public interface OnItemClickListener {
+        void onItemClick(Resep data);
+    }
+
     public void setData(List<Resep> newDataList) {
         dataList.clear();
         dataList.addAll(newDataList);

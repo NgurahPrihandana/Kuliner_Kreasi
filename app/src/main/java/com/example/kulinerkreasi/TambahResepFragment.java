@@ -54,7 +54,6 @@ public class TambahResepFragment extends Fragment {
     private Uri selectedImageUri;
 
     private EditText edt_judul_resep, edt_minimal, edt_maksimal, edt_estimasi, edt_bahan, edt_langkah;
-
     private Button btnSelectImage, btn_submit;
     FirebaseFirestore db;
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
