@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -52,11 +53,9 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                loginUser();
             }
         });
-
-//        mAuth.signInWithEmailAndPassword();
     }
 
     private void loginUser() {
@@ -71,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-
+                            checkUserRole();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
@@ -90,9 +89,24 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
                         if(documentSnapshot.exists()) {
-
+                            String role = documentSnapshot.getString("role");
+                            if(role.equals("user")) {
+                                startActivity(new Intent(LoginActivity.this, MainActivityUser.class));
+                            } else if(role.equals("admin")) {
+                                startActivity(new Intent(LoginActivity.this, MainActivityAdmin.class));
+                            }
+                        } else {
+                            Toast.makeText(LoginActivity.this, "User document does not exist.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // Error occurred while retrieving user role
+                        Log.w(TAG, "Error when fetching data", e);
+                        Toast.makeText(LoginActivity.this, "Error occurred. Please try again.", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }
