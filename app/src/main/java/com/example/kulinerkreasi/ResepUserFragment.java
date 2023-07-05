@@ -14,6 +14,20 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.kulinerkreasi.entities.Resep;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ResepUserFragment extends Fragment {
@@ -25,28 +39,41 @@ public class ResepUserFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_resep_user, container, false);
 
-        keHalamanSimpan = rootView.findViewById(R.id.keDisimpan);
-        keHalamanRecook = rootView.findViewById(R.id.keDiRecook);
+        RecyclerView recyclerView = rootView.findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
 
+        ResepDataAdapter adapter = new ResepDataAdapter(new ArrayList<>());
+        recyclerView.setAdapter(adapter);
 
-        keHalamanSimpan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DisimpanFragment fragmentsimpan = new DisimpanFragment();
-                FragmentManager fragmentManager = getParentFragmentManager();
-                FragmentTransaction transaction = fragmentManager.beginTransaction();
-                transaction.replace(R.id.fragment_container, fragmentsimpan);
-                transaction.addToBackStack(null);
-                transaction.commit();
-            }
-        });
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        CollectionReference collectionRef = db.collection("Reseps");
 
-        keHalamanRecook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getActivity(), "Tambah Berita", Toast.LENGTH_SHORT).show();
-            }
-        });
+        collectionRef.get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        List<Resep> datalist = new ArrayList<>();
+                        for(QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+                            String judul_resep = documentSnapshot.getString("judul_resep");
+                            String minimal = documentSnapshot.getString("minimal");
+                            String maksimal = documentSnapshot.getString("maksimal");
+                            String estimasi = documentSnapshot.getString("estimasi");
+                            String image = documentSnapshot.getString("imageResep");
+                            String bahan = documentSnapshot.getString("bahan");
+                            String langkah = documentSnapshot.getString("langkah");
+                            Resep resep = new Resep(judul_resep, minimal, maksimal, bahan, langkah, estimasi, image);
+                            datalist.add(resep);
+                        }
+
+                        adapter.setData(datalist);
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getContext(), "Failed to fetch data", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
         return rootView;
 
