@@ -65,7 +65,7 @@
         android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Password"
+        android:text="Passwords"
         android:textFontWeight="500"
         android:fontFamily="@font/poppins"
         android:textColor="@color/black"
@@ -77,7 +77,7 @@
         android:background="@drawable/edit_text_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
+        android:inputType="textPassword"
         />
     <Button
         android:id="@+id/button"

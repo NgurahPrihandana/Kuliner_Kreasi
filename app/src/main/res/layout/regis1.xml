@@ -60,7 +60,7 @@
                 android:background="@drawable/edit_text_background"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
+                android:inputType="text"
 
                 />
             <TextView
@@ -79,7 +79,7 @@
                 android:background="@drawable/edit_text_background"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
+                android:inputType="text"
                 />
 
             <TextView
@@ -98,7 +98,7 @@
                 android:background="@drawable/edit_text_background"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
+                android:inputType="text|datetime"
                 />
 
             <TextView
@@ -117,7 +117,7 @@
                 android:background="@drawable/edit_text_background"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
+                android:inputType="textLongMessage"
                 />
             <TextView
                 android:layout_marginTop="15dp"
@@ -135,7 +135,7 @@
                 android:background="@drawable/edit_text_background"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
+                android:inputType="text|phone"
                 />
             <TextView
                 android:layout_marginTop="20dp"
@@ -172,7 +172,7 @@
                 android:background="@drawable/edit_text_background"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
+                android:inputType="textPassword"
                 />
             <TextView
                 android:layout_marginTop="15dp"
@@ -190,7 +190,7 @@
                 android:background="@drawable/edit_text_background"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
+                android:inputType="textPassword"
                 />
             <Button
                 android:id="@+id/button"

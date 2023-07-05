@@ -18,4 +18,8 @@ public class ProfilUserFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profil_user, container, false);
     }
+
+    public class User{
+
+    }
 }
