@@ -14,6 +14,7 @@ import androidx.lifecycle.viewmodel.CreationExtras;
 
 public class TambahResepFragment extends Fragment {
     private LinearLayout containerBahan;
+    private LinearLayout containerSteps;
     private Button btnAddBahan;
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -50,4 +51,6 @@ public class TambahResepFragment extends Fragment {
     private void removeItemBahan(View itemBahan) {
         containerBahan.removeView(itemBahan);
     }
+
+
 }

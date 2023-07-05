@@ -233,6 +233,43 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="40dp"
+                android:paddingVertical="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/white"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Langkah Langkah"
+                    android:textFontWeight="500"
+                    android:fontFamily="@font/poppins"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"/>
+
+                <LinearLayout
+                    android:id="@+id/containerStep"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/addMoreSteps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tambah +"/>
+
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
