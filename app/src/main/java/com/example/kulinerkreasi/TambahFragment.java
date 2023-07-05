@@ -45,7 +45,12 @@ public class TambahFragment extends Fragment {
         tambahBerita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "Tambah Berita", Toast.LENGTH_SHORT).show();
+                TambahBeritaFragment fragmentTambahBerita = new TambahBeritaFragment();
+                FragmentManager fragmentManager = getParentFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.replace(R.id.fragment_container, fragmentTambahBerita);
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
 

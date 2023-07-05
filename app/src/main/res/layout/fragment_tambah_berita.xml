@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:fontFamily="@font/poppins"
-            android:text="Tulis Resep"
+            android:text="Tulis Berita"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textFontWeight="600"
@@ -61,25 +61,23 @@
                 android:paddingHorizontal="40dp"
                 android:paddingVertical="10dp"
                 android:layout_marginTop="20dp"
-                android:background="@color/white"
-                >
+                android:background="@color/white">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Judul Resep"
+                    android:text="Judul Berita"
                     android:textFontWeight="500"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
                     android:textSize="17sp"/>
 
                 <EditText
-                    android:id="@+id/edt_judul_resep"
+                    android:id="@+id/edt_judul_berita"
                     android:background="@drawable/edit_text_background"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-
                     />
 
             </LinearLayout>
@@ -97,7 +95,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Foto Resep"
+                    android:text="Foto Berita"
                     android:textFontWeight="500"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
@@ -110,7 +108,7 @@
                     android:text="Select Image"
                     android:layout_centerInParent="true" />
 
-                    />
+                />
 
             </LinearLayout>
 
@@ -121,152 +119,24 @@
                 android:paddingHorizontal="40dp"
                 android:paddingVertical="10dp"
                 android:layout_marginTop="20dp"
-                android:background="@color/white"
-                >
+                android:background="@color/white">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Porsi Resep"
-                    android:textFontWeight="500"
-                    android:fontFamily="@font/poppins"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <EditText
-                        android:id="@+id/edt_minimal"
-                        android:background="@drawable/edit_text_background"
-                        android:layout_height="wrap_content"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:hint="Minimal"
-                        android:fontFamily="@font/poppins"
-                        android:textSize="16sp"
-                        android:layout_marginEnd="4dp"
-                        android:inputType="number"
-                        />
-
-                    <EditText
-                        android:id="@+id/edt_maksimal"
-                        android:background="@drawable/edit_text_background"
-                        android:layout_height="wrap_content"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:hint="Maksimal"
-                        android:fontFamily="@font/poppins"
-                        android:textSize="16sp"
-                        android:layout_marginStart="4dp"
-                        android:inputType="number"/>
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingHorizontal="40dp"
-                android:paddingVertical="10dp"
-                android:layout_marginTop="20dp"
-                android:background="@color/white"
-                >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Estimasi Pengeluaran Menu"
+                    android:text="Deskripsi Berita"
                     android:textFontWeight="500"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
                     android:textSize="17sp"/>
 
                 <EditText
-                    android:id="@+id/edit_estimasi"
+                    android:id="@+id/edt_desc_berita"
                     android:background="@drawable/edit_text_background"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
                     />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingHorizontal="40dp"
-                android:paddingVertical="10dp"
-                android:layout_marginTop="20dp"
-                android:background="@color/white"
-                >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Bahan Utama"
-                    android:textFontWeight="500"
-                    android:fontFamily="@font/poppins"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"/>
-
-                <LinearLayout
-                    android:id="@+id/containerBahan"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-
-                </LinearLayout>
-
-                <Button
-                    android:id="@+id/addMoreBahan"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tambah +"/>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingHorizontal="40dp"
-                android:paddingVertical="10dp"
-                android:layout_marginTop="20dp"
-                android:background="@color/white"
-                >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Langkah Langkah"
-                    android:textFontWeight="500"
-                    android:fontFamily="@font/poppins"
-                    android:textColor="@color/black"
-                    android:textSize="17sp"/>
-
-                <LinearLayout
-                    android:id="@+id/containerStep"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-
-                </LinearLayout>
-
-                <Button
-                    android:id="@+id/addMoreSteps"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tambah +"/>
-
 
             </LinearLayout>
 
@@ -285,10 +155,7 @@
 
             </LinearLayout>
 
-
-
         </LinearLayout>
-
     </ScrollView>
 
 </LinearLayout>
