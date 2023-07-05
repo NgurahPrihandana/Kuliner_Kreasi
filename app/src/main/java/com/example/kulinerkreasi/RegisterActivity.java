@@ -99,6 +99,7 @@ public class RegisterActivity extends AppCompatActivity {
         userDetails.put("tgl_lahir", tgl_lahir);
         userDetails.put("alamat", alamat);
         userDetails.put("no_telp", no_telp);
+        userDetails.put("role","user");
 
         db.collection("Users").document(userId)
                 .set(userDetails)
