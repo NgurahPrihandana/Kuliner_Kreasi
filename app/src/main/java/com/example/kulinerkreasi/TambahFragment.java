@@ -33,15 +33,11 @@ public class TambahFragment extends Fragment {
         tambahResep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Toast.makeText(getActivity(), "Tambah Resep", Toast.LENGTH_SHORT).show();
-                // Create new fragment and transaction
-                FragmentManager fragmentManager = getChildFragmentManager();
+                TambahResepFragment fragmentTambah = new TambahResepFragment();
+                FragmentManager fragmentManager = getParentFragmentManager();
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
-                transaction.setReorderingAllowed(true);
-                // Replace whatever is in the fragment_container view with this fragment
-                transaction.replace(R.id.fragment_container, ExampleFragment.class, null);
-
-// Commit the transaction
+                transaction.replace(R.id.fragment_container, fragmentTambah);
+                transaction.addToBackStack(null);
                 transaction.commit();
             }
         });
