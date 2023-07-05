@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 public class TambahFragment extends Fragment {
     LinearLayout tambahResep;
@@ -31,7 +33,16 @@ public class TambahFragment extends Fragment {
         tambahResep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "Tambah Resep", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), "Tambah Resep", Toast.LENGTH_SHORT).show();
+                // Create new fragment and transaction
+                FragmentManager fragmentManager = getChildFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.setReorderingAllowed(true);
+                // Replace whatever is in the fragment_container view with this fragment
+                transaction.replace(R.id.fragment_container, ExampleFragment.class, null);
+
+// Commit the transaction
+                transaction.commit();
             }
         });
 
