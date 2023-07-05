@@ -97,6 +97,7 @@ public class LoginActivity extends AppCompatActivity {
                             }
                         } else {
                             Toast.makeText(LoginActivity.this, "User document does not exist.", Toast.LENGTH_SHORT).show();
+                            
                         }
                     }
                 })

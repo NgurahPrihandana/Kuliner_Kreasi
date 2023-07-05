@@ -103,6 +103,12 @@
                     android:textColor="@color/black"
                     android:textSize="17sp"/>
 
+                <ImageView
+                    android:id="@+id/imageViewPreview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"/>
+
                 <Button
                     android:id="@+id/btnSelectImage"
                     android:layout_width="wrap_content"
@@ -187,7 +193,7 @@
                     android:textSize="17sp"/>
 
                 <EditText
-                    android:id="@+id/edit_estimasi"
+                    android:id="@+id/edt_estimasi"
                     android:background="@drawable/edit_text_background"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -215,20 +221,13 @@
                     android:textColor="@color/black"
                     android:textSize="17sp"/>
 
-                <LinearLayout
-                    android:id="@+id/containerBahan"
+                <EditText
+                    android:id="@+id/edt_bahan"
+                    android:background="@drawable/edit_text_background"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-
-                </LinearLayout>
-
-                <Button
-                    android:id="@+id/addMoreBahan"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tambah +"/>
+                    android:inputType="text"
+                    />
 
 
             </LinearLayout>
@@ -252,20 +251,13 @@
                     android:textColor="@color/black"
                     android:textSize="17sp"/>
 
-                <LinearLayout
-                    android:id="@+id/containerStep"
+                <EditText
+                    android:id="@+id/edt_langkah"
+                    android:background="@drawable/edit_text_background"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-
-                </LinearLayout>
-
-                <Button
-                    android:id="@+id/addMoreSteps"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tambah +"/>
+                    android:inputType="text"
+                    />
 
 
             </LinearLayout>
@@ -279,6 +271,7 @@
                 >
 
                 <Button
+                    android:id="@+id/submit_menu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Simpan"/>

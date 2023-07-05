@@ -2,6 +2,8 @@ package com.example.kulinerkreasi;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+
+import android.content.Context;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -10,6 +12,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomnavigation.BottomNavigationView.OnNavigationItemSelectedListener;
 
 public class MainActivityAdmin extends AppCompatActivity {
+    public static Context contextOfApplication;
+    public static Context getContextOfApplication()
+    {
+        return contextOfApplication;
+    }
 
     BottomNavigationView bottomNavigation;
     private OnNavigationItemSelectedListener navigation = new BottomNavigationView.OnNavigationItemSelectedListener(){
@@ -49,5 +56,8 @@ public class MainActivityAdmin extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new DashboardFragment()).commit();
 
         bottomNavigation.setOnNavigationItemSelectedListener(navigation);
+        contextOfApplication = getApplicationContext();
     }
+
+
 }
