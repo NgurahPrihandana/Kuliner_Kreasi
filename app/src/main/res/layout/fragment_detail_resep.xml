@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailResepFragment"
+    android:background="@color/abu_bg"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="40sp"
+        android:paddingTop="20sp"
+        android:paddingRight="40sp"
+        android:paddingBottom="20sp">
+
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/back_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/edt_email"
+            app:layout_constraintHorizontal_bias="0.107"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.492" />
+
+        <EditText
+            android:id="@+id/edt_email"
+            android:layout_width="280dp"
+            android:layout_height="43dp"
+            android:background="@drawable/edit_text_background"
+            android:hint="Cari Resep"
+            android:inputType="textEmailAddress"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.702"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/kuning"
+                    android:padding="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:src="@drawable/img_resep">
+
+                    </ImageView>
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="10dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+
+                >
+
+                <TextView
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Nasi Goreng"
+                    android:textColor="@color/black"
+                    android:textFontWeight="800"
+                    android:textSize="20sp"></TextView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/baseline_save_alt_24"
+
+
+                        ></ImageView>
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="simpan"
+                        android:textColor="@color/black"
+                        android:textFontWeight="400"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/poppins_medium"
+                        ></TextView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="22dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/star"
+                    android:layout_gravity="center"
+                    ></ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(4)"
+                    android:textColor="@color/black"
+                    android:textFontWeight="800"
+                    android:fontFamily="@font/poppins_medium"
+                    ></TextView>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="10sp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/baseline_person_24"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(100)"
+                    android:textColor="@color/black"
+                    android:textFontWeight="800"
+                    android:fontFamily="@font/poppins_medium"
+                    ></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="10dp"
+                android:background="@color/white"
+                android:layout_marginTop="10dp"
+
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Informasi Resep"
+                    android:textColor="@color/black"
+                    android:textFontWeight="400"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins_medium"
+                    ></TextView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="22dp"
+                android:background="@color/white"
+                android:paddingTop="10dp"
+                android:orientation="horizontal"
+
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/baseline_access_time_filled_24"
+                        android:layout_gravity="center"
+                        android:paddingHorizontal="40dp"
+                        ></ImageView>
+                    <TextView
+                        android:layout_gravity="center"
+                        android:paddingHorizontal="25dp"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="20-30 Menit"
+                        android:textColor="@color/black"
+                        android:textFontWeight="400"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/poppins_medium"
+                        ></TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10sp"
+                        android:layout_gravity="center"
+                        android:paddingHorizontal="40dp"
+                        android:src="@drawable/baseline_person_outline_24"></ImageView>
+                    <TextView
+                        android:layout_gravity="center"
+                        android:paddingHorizontal="35dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2-5 Orang"
+                        android:textColor="@color/black"
+                        android:textFontWeight="400"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/poppins_medium"
+                        ></TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingHorizontal="40dp"
+                        android:paddingLeft="10sp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/baseline_attach_money_24"></ImageView>
+
+
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:paddingHorizontal="35dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="150k"
+                        android:textColor="@color/black"
+                        android:textFontWeight="400"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/poppins_medium"
+                        ></TextView>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="10dp"
+                android:background="@color/white"
+                android:layout_marginTop="10dp"
+
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Bahan-bahan"
+                    android:textColor="@color/black"
+                    android:textFontWeight="400"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins_medium"
+                    ></TextView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="22dp"
+                android:background="@color/white"
+                android:paddingVertical="10dp"
+                android:orientation="horizontal"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="jdnenefekfneknfnjenfjenfjenenfejnfjenfjenfnefnejnfenfjnje jfnjenfenjf nfjnejfnfjnefjnejfnejjnefjennefjfen"
+                        android:textColor="@color/black"
+                        android:textFontWeight="400"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/poppins_medium"
+                        ></TextView>
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="10dp"
+                android:background="@color/white"
+                android:layout_marginTop="10dp"
+
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Langkah-langkah"
+                    android:textColor="@color/black"
+                    android:textFontWeight="400"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins_medium"
+                    ></TextView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="22dp"
+                android:background="@color/white"
+                android:paddingVertical="10dp"
+                android:orientation="horizontal"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="jdnenefekfneknfnjenfjenfjenenfejnfjenfjenfnefnejnfenfjnje jfnjenfenjf nfjnejfnfjnefjnejfnejjnefjennefjfen"
+                        android:textColor="@color/black"
+                        android:textFontWeight="400"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/poppins_medium"
+                        ></TextView>
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>
