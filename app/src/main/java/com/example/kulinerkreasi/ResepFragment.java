@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,6 +29,8 @@ import java.util.List;
 
 public class ResepFragment extends Fragment implements ResepDataAdapter.OnItemClickListener{
     private List<Resep> datalist;
+    String documentId;
+    Bundle bundle = new Bundle();
     @Nullable
 
     @Override
@@ -51,6 +55,7 @@ public class ResepFragment extends Fragment implements ResepDataAdapter.OnItemCl
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
 
                         for(QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+                            documentId = documentSnapshot.getId();
                             String judul_resep = documentSnapshot.getString("judul_resep");
                             String minimal = documentSnapshot.getString("minimal");
                             String maksimal = documentSnapshot.getString("maksimal");
@@ -78,6 +83,20 @@ public class ResepFragment extends Fragment implements ResepDataAdapter.OnItemCl
     @Override
     public void onItemClick(int position) {
         Resep resep_item = datalist.get(position);
-        Toast.makeText(getContext(), "Clicked: " + resep_item.getJudul_resep(), Toast.LENGTH_SHORT).show();
+        bundle.putString("judul_resep", resep_item.getJudul_resep());
+        bundle.putString("minimal", resep_item.getMinimal());
+        bundle.putString("maksimal", resep_item.getMaksimal());
+        bundle.putString("estimasi", resep_item.getEstimasi());
+        bundle.putString("image", resep_item.getImageUrl());
+        bundle.putString("bahan", resep_item.getBahan());
+        bundle.putString("langkah", resep_item.getLangkah());
+        bundle.putString("id", documentId);
+        DetailResepFragmentAdmin fragmentDetail = new DetailResepFragmentAdmin();
+        fragmentDetail.setArguments(bundle);
+        FragmentManager fragmentManager = getParentFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.fragment_container, fragmentDetail);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }
