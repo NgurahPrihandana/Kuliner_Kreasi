@@ -6,19 +6,28 @@ import androidx.fragment.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomnavigation.BottomNavigationView.OnNavigationItemSelectedListener;
+import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.zip.Inflater;
 
 public class MainActivityAdmin extends AppCompatActivity {
     public static Context contextOfApplication;
+    private Inflater inflater;
+
     public static Context getContextOfApplication()
     {
         return contextOfApplication;
     }
 
     BottomNavigationView bottomNavigation;
+    private FirebaseAuth mAuth;
+    TextView displayNameTextView;
+
     private OnNavigationItemSelectedListener navigation = new BottomNavigationView.OnNavigationItemSelectedListener(){
         @Override
         public boolean onNavigationItemSelected( MenuItem item) {
@@ -47,8 +56,11 @@ public class MainActivityAdmin extends AppCompatActivity {
     }
             ;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mAuth = FirebaseAuth.getInstance();
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main_admin);
@@ -57,7 +69,10 @@ public class MainActivityAdmin extends AppCompatActivity {
 
         bottomNavigation.setOnNavigationItemSelectedListener(navigation);
         contextOfApplication = getApplicationContext();
+
     }
+
+
 
 
 }
