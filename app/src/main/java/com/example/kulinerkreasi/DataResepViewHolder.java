@@ -18,9 +18,10 @@ public class DataResepViewHolder extends RecyclerView.ViewHolder{
     private TextView rating;
     private ResepDataAdapter.OnItemClickListener clickListener;
 
-    public DataResepViewHolder(@NonNull View itemView) {
+    public DataResepViewHolder(@NonNull View itemView, ResepDataAdapter.OnItemClickListener clickListener) {
         super(itemView);
 
+        this.clickListener = clickListener;
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

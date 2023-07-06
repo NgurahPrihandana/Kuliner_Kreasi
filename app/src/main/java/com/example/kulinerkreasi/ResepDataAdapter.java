@@ -19,15 +19,16 @@ public class ResepDataAdapter extends RecyclerView.Adapter<DataResepViewHolder>{
         this.clickListener = listener;
     }
 
-    public ResepDataAdapter(List<Resep> dataList) {
+    public ResepDataAdapter(List<Resep> dataList, ResepDataAdapter.OnItemClickListener clickListener) {
         this.dataList = dataList;
+        this.clickListener = clickListener;
     }
 
     @NonNull
     @Override
     public DataResepViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.resep_item, parent, false);
-        return new DataResepViewHolder(itemView);
+        return new DataResepViewHolder(itemView, clickListener);
     }
 
     @Override

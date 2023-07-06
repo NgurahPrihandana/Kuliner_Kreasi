@@ -32,19 +32,23 @@ import java.util.List;
 
 public class ResepUserFragment extends Fragment implements ResepDataAdapter.OnItemClickListener{
     LinearLayout keHalamanSimpan, keHalamanRecook;
-    List<Resep> datalist;
+    private List<Resep> datalist;
+    Bundle bundle = new Bundle();
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
+        datalist = new ArrayList<>();
+
         View rootView = inflater.inflate(R.layout.fragment_resep_user, container, false);
 
         RecyclerView recyclerView = rootView.findViewById(R.id.recycler_view);
+
+        ResepDataAdapter adapter = new ResepDataAdapter(new ArrayList<>(), this);
+        adapter.setOnItemClickListener(this);
+
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
-
-        ResepDataAdapter adapter = new ResepDataAdapter(new ArrayList<>());
-
         recyclerView.setAdapter(adapter);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -54,7 +58,6 @@ public class ResepUserFragment extends Fragment implements ResepDataAdapter.OnIt
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        datalist = new ArrayList<>();
                         for(QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
                             String judul_resep = documentSnapshot.getString("judul_resep");
                             String minimal = documentSnapshot.getString("minimal");
@@ -63,6 +66,7 @@ public class ResepUserFragment extends Fragment implements ResepDataAdapter.OnIt
                             String image = documentSnapshot.getString("imageResep");
                             String bahan = documentSnapshot.getString("bahan");
                             String langkah = documentSnapshot.getString("langkah");
+
                             Resep resep = new Resep(judul_resep, minimal, maksimal, bahan, langkah, estimasi, image);
                             datalist.add(resep);
                         }
@@ -73,7 +77,7 @@ public class ResepUserFragment extends Fragment implements ResepDataAdapter.OnIt
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getContext(), "Failed to fetch data", Toast.LENGTH_SHORT).show();
+
                     }
                 });
 
@@ -84,11 +88,20 @@ public class ResepUserFragment extends Fragment implements ResepDataAdapter.OnIt
     @Override
     public void onItemClick(int position) {
         Resep resep_item = datalist.get(position);
-        Toast.makeText(getContext(), "Clicked: " + resep_item.getJudul_resep(), Toast.LENGTH_SHORT).show();
+        bundle.putString("judul_resep", resep_item.getJudul_resep());
+        bundle.putString("minimal", resep_item.getMinimal());
+        bundle.putString("maksimal", resep_item.getMaksimal());
+        bundle.putString("estimasi", resep_item.getEstimasi());
+        bundle.putString("image", resep_item.getImageUrl());
+        bundle.putString("bahan", resep_item.getBahan());
+        bundle.putString("langkah", resep_item.getLangkah());
+        DetailResepFragment fragmentDetail = new DetailResepFragment();
+        fragmentDetail.setArguments(bundle);
+        FragmentManager fragmentManager = getParentFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.fragment_container, fragmentDetail);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
-//    @Override
-//    public void onItemClick(int position) {
-//        Resep resep = datalist.get(position);
-//    }
 }

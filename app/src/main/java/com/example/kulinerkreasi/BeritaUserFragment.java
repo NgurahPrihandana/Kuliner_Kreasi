@@ -27,20 +27,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class BeritaUserFragment extends Fragment {
-
+public class BeritaUserFragment extends Fragment implements BeritaDataAdapter.OnItemClickListener {
+    List<Berita> datalist;
     @Nullable
 
     @Override
     public View onCreateView(LayoutInflater inflater,@Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        datalist = new ArrayList<>();
         View rootView = inflater.inflate(R.layout.fragment_berita_user, container, false);
 
         RecyclerView recyclerView = rootView.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        BeritaDataAdapter adapter = new BeritaDataAdapter(new ArrayList<>());
+        BeritaDataAdapter adapter = new BeritaDataAdapter(new ArrayList<>(), this);
+        adapter.setOnItemClickListener(this);
+
         recyclerView.setAdapter(adapter);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -50,7 +53,6 @@ public class BeritaUserFragment extends Fragment {
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        List<Berita> datalist = new ArrayList<>();
                         for(QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
                             String judul_berita = documentSnapshot.getString("judul_berita");
                             String deskripsi = documentSnapshot.getString("desc_berita");
@@ -70,5 +72,11 @@ public class BeritaUserFragment extends Fragment {
                 });
 
         return rootView;
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Berita berita_item = datalist.get(position);
+        Toast.makeText(getContext(), "Clicked: " + berita_item.getJudul_berita(), Toast.LENGTH_SHORT).show();
     }
 }

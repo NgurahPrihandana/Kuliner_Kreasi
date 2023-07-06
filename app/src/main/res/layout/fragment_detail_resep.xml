@@ -72,7 +72,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-
+                        android:id="@+id/image_makanan"
                         android:layout_width="match_parent"
                         android:layout_height="300dp"
                         android:src="@drawable/img_resep">
@@ -95,6 +95,7 @@
                 >
 
                 <TextView
+                    android:id="@+id/judul_resep"
                     android:layout_width="320dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_medium"
@@ -139,36 +140,36 @@
                 android:orientation="horizontal"
                 android:paddingBottom="10dp">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/star"
-                    android:layout_gravity="center"
-                    ></ImageView>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="(4)"
-                    android:textColor="@color/black"
-                    android:textFontWeight="800"
-                    android:fontFamily="@font/poppins_medium"
-                    ></TextView>
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:src="@drawable/star"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    ></ImageView>-->
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="(4)"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textFontWeight="800"-->
+<!--                    android:fontFamily="@font/poppins_medium"-->
+<!--                    ></TextView>-->
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:paddingLeft="10sp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/baseline_person_24"></ImageView>
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:paddingLeft="10sp"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:src="@drawable/baseline_person_24"></ImageView>-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="(100)"
-                    android:textColor="@color/black"
-                    android:textFontWeight="800"
-                    android:fontFamily="@font/poppins_medium"
-                    ></TextView>
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="(100)"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textFontWeight="800"-->
+<!--                    android:fontFamily="@font/poppins_medium"-->
+<!--                    ></TextView>-->
 
             </LinearLayout>
 
@@ -216,17 +217,18 @@
                         android:layout_gravity="center"
                         android:paddingHorizontal="40dp"
                         ></ImageView>
+
                     <TextView
-                        android:layout_gravity="center"
-                        android:paddingHorizontal="25dp"
+                        android:id="@+id/estimasi"
                         android:layout_width="120dp"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/poppins_medium"
+                        android:paddingHorizontal="25dp"
                         android:text="20-30 Menit"
                         android:textColor="@color/black"
                         android:textFontWeight="400"
-                        android:textSize="10sp"
-                        android:fontFamily="@font/poppins_medium"
-                        ></TextView>
+                        android:textSize="10sp"></TextView>
                 </LinearLayout>
 
                 <LinearLayout
@@ -241,6 +243,7 @@
                         android:paddingHorizontal="40dp"
                         android:src="@drawable/baseline_person_outline_24"></ImageView>
                     <TextView
+                        android:id="@+id/minimal"
                         android:layout_gravity="center"
                         android:paddingHorizontal="35dp"
                         android:layout_width="wrap_content"
@@ -268,6 +271,7 @@
 
 
                     <TextView
+                        android:id="@+id/maksimal"
                         android:layout_gravity="center"
                         android:paddingHorizontal="35dp"
                         android:layout_width="wrap_content"
@@ -321,6 +325,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/bahan"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="jdnenefekfneknfnjenfjenfjenenfejnfjenfjenfnefnejnfenfjnje jfnjenfenjf nfjnejfnfjnefjnejfnejjnefjennefjfen"
@@ -374,6 +379,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/langkah"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="jdnenefekfneknfnjenfjenfjenenfejnfjenfjenfnefnejnfenfjnje jfnjenfenjf nfjnejfnfjnefjnejfnejjnefjennefjfen"

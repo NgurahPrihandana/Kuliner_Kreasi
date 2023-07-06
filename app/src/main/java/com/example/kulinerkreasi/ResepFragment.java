@@ -25,19 +25,21 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ResepFragment extends Fragment {
+public class ResepFragment extends Fragment implements ResepDataAdapter.OnItemClickListener{
+    private List<Resep> datalist;
     @Nullable
 
     @Override
     public View onCreateView( LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+        datalist = new ArrayList<>();
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_resep, container, false);
 
         RecyclerView recyclerView = rootView.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
 
-        ResepDataAdapter adapter = new ResepDataAdapter(new ArrayList<>());
+        ResepDataAdapter adapter = new ResepDataAdapter(new ArrayList<>(), this);
         recyclerView.setAdapter(adapter);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -47,7 +49,7 @@ public class ResepFragment extends Fragment {
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        List<Resep> datalist = new ArrayList<>();
+
                         for(QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
                             String judul_resep = documentSnapshot.getString("judul_resep");
                             String minimal = documentSnapshot.getString("minimal");
@@ -71,5 +73,11 @@ public class ResepFragment extends Fragment {
                 });
 
         return rootView;
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Resep resep_item = datalist.get(position);
+        Toast.makeText(getContext(), "Clicked: " + resep_item.getJudul_resep(), Toast.LENGTH_SHORT).show();
     }
 }

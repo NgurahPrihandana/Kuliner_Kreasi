@@ -16,8 +16,24 @@ public class DataBeritaViewHolder extends RecyclerView.ViewHolder{
     private TextView judul;
     private TextView desc;
 
-    public DataBeritaViewHolder(@NonNull View itemView) {
+    private BeritaDataAdapter.OnItemClickListener clickListener;
+
+    public DataBeritaViewHolder(@NonNull View itemView, BeritaDataAdapter.OnItemClickListener clickListener) {
         super(itemView);
+
+        this.clickListener = clickListener;
+
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (clickListener != null) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+                        clickListener.onItemClick(position);
+                    }
+                }
+            }
+        });
         imageView = itemView.findViewById(R.id.gambar_berita);
         judul = itemView.findViewById(R.id.judul_berita);
         desc = itemView.findViewById(R.id.desc_berita);

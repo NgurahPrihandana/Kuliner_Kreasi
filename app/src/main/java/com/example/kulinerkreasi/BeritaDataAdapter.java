@@ -15,14 +15,21 @@ import java.util.List;
 public class BeritaDataAdapter extends RecyclerView.Adapter<DataBeritaViewHolder>{
     private List<Berita> dataList;
 
-    public BeritaDataAdapter(List<Berita> dataList) {
+    private BeritaDataAdapter.OnItemClickListener clickListener;
+
+    public void setOnItemClickListener(BeritaDataAdapter.OnItemClickListener listener) {
+        this.clickListener = listener;
+    }
+
+    public BeritaDataAdapter(List<Berita> dataList, BeritaDataAdapter.OnItemClickListener clickListener) {
         this.dataList = dataList;
+        this.clickListener = clickListener;
     }
     @NonNull
     @Override
     public DataBeritaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.berita_item, parent, false);
-        return new DataBeritaViewHolder(itemView);
+        return new DataBeritaViewHolder(itemView, clickListener);
     }
 
     @Override
@@ -35,6 +42,10 @@ public class BeritaDataAdapter extends RecyclerView.Adapter<DataBeritaViewHolder
     @Override
     public int getItemCount() {
         return dataList.size();
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
     }
 
     public void setData(List<Berita> newDataList) {

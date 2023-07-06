@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kulinerkreasi.entities.Berita;
+import com.example.kulinerkreasi.entities.Resep;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
@@ -27,19 +28,23 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BeritaFragment extends Fragment {
+public class BeritaFragment extends Fragment implements BeritaDataAdapter.OnItemClickListener{
+    List<Berita> datalist;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+        datalist = new ArrayList<>();
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_berita, container, false);
 
         RecyclerView recyclerView = rootView.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        BeritaDataAdapter adapter = new BeritaDataAdapter(new ArrayList<>());
+        BeritaDataAdapter adapter = new BeritaDataAdapter(new ArrayList<>(), this);
+        adapter.setOnItemClickListener(this);
+
         recyclerView.setAdapter(adapter);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -49,7 +54,7 @@ public class BeritaFragment extends Fragment {
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        List<Berita> datalist = new ArrayList<>();
+
                         for(QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
                             String judul_berita = documentSnapshot.getString("judul_berita");
                             String deskripsi = documentSnapshot.getString("desc_berita");
@@ -69,5 +74,11 @@ public class BeritaFragment extends Fragment {
                 });
 
         return rootView;
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Berita berita_item = datalist.get(position);
+        Toast.makeText(getContext(), "Clicked: " + berita_item.getJudul_berita(), Toast.LENGTH_SHORT).show();
     }
 }
