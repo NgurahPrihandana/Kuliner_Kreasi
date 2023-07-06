@@ -96,7 +96,26 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_gravity="center"
-                    android:gravity="center"/>
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/baseline_save_alt_24"
+
+
+                        ></ImageView>
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="simpan"
+                        android:textColor="@color/black"
+                        android:textFontWeight="400"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/poppins_medium"
+                        ></TextView>
+
+                </LinearLayout>
 
             </LinearLayout>
 
