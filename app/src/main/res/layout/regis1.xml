@@ -202,6 +202,7 @@
                 android:paddingVertical="15sp"
                 android:layout_gravity="center"/>
             <TextView
+                android:id="@+id/go_to_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/sudah_ada_akun"

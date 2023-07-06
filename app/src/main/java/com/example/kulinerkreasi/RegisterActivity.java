@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -30,6 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private EditText edt_nama_lengkap, edt_nama_pengguna, edt_tgl_lahir, edt_alamat, edt_no_telp,
             edt_email, edt_pass, edt_pass_conf;
+    TextView txt_to_login;
     private Button registerButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class RegisterActivity extends AppCompatActivity {
         edt_pass = findViewById(R.id.edt_pass);
         edt_pass_conf = findViewById(R.id.edt_pass_conf);
         registerButton = findViewById(R.id.button);
+        txt_to_login = findViewById(R.id.go_to_login);
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +57,14 @@ public class RegisterActivity extends AppCompatActivity {
                 registerUser();
             }
         });
+
+        txt_to_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+            }
+        });
+
     }
 
     private void registerUser() {
