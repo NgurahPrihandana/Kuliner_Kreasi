@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ResepUserFragment extends Fragment{
+public class ResepUserFragment extends Fragment implements ResepDataAdapter.OnItemClickListener{
     LinearLayout keHalamanSimpan, keHalamanRecook;
     List<Resep> datalist;
     @Nullable
@@ -43,13 +43,8 @@ public class ResepUserFragment extends Fragment{
         RecyclerView recyclerView = rootView.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
 
-        ResepDataAdapter adapter = new ResepDataAdapter(new ArrayList<>(), new ResepDataAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-                Toast.makeText(getContext(), "Heyy",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
+        ResepDataAdapter adapter = new ResepDataAdapter(new ArrayList<>());
+
         recyclerView.setAdapter(adapter);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -84,6 +79,12 @@ public class ResepUserFragment extends Fragment{
 
         return rootView;
 
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Resep resep_item = datalist.get(position);
+        Toast.makeText(getContext(), "Clicked: " + resep_item.getJudul_resep(), Toast.LENGTH_SHORT).show();
     }
 
 //    @Override

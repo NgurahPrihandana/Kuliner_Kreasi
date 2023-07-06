@@ -12,7 +12,7 @@ import com.bumptech.glide.Glide;
 import com.example.kulinerkreasi.entities.Berita;
 import com.example.kulinerkreasi.entities.Resep;
 
-public class DataResepViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+public class DataResepViewHolder extends RecyclerView.ViewHolder{
     private ImageView imageView;
     private TextView judul;
     private TextView rating;
@@ -21,7 +21,17 @@ public class DataResepViewHolder extends RecyclerView.ViewHolder implements View
     public DataResepViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        itemView.setOnClickListener(this);
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (clickListener != null) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+                        clickListener.onItemClick(position);
+                    }
+                }
+            }
+        });
         imageView = itemView.findViewById(R.id.gambar_resep);
         judul = itemView.findViewById(R.id.judul_resep);
         rating = itemView.findViewById(R.id.rating);
@@ -37,14 +47,6 @@ public class DataResepViewHolder extends RecyclerView.ViewHolder implements View
         Glide.with(itemView.getContext())
                 .load(imageUrl)
                 .into(imageView);
-    }
-
-    @Override
-    public void onClick(View view) {
-        int position = getAdapterPosition();
-        if(position != RecyclerView.NO_POSITION) {
-            clickListener.onItemClick(position);
-        }
     }
 
 }
