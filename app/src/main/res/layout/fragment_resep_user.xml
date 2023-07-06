@@ -8,9 +8,33 @@
     android:layout_height="match_parent"
     >
 
-    <LinearLayout
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/white"-->
+<!--        android:orientation="vertical"-->
+<!--        android:paddingLeft="40sp"-->
+<!--        android:paddingTop="20sp"-->
+<!--        android:paddingRight="40sp"-->
+<!--        android:paddingBottom="20sp">-->
+
+<!--     -->
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="@font/poppins"-->
+<!--            android:text="Mia!"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textFontWeight="600"-->
+<!--            android:textSize="20sp" />-->
+
+<!--    </LinearLayout>-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="106dp"
         android:background="@color/white"
         android:orientation="vertical"
         android:paddingLeft="40sp"
@@ -18,25 +42,22 @@
         android:paddingRight="40sp"
         android:paddingBottom="20sp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:text="Selamat Datang"
-            android:textColor="@color/black"
-            android:textFontWeight="400"
-            android:textSize="17sp"></TextView>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins"
-            android:text="Mia!"
+            android:text="Simpanan Resep"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textFontWeight="600"
-            android:textSize="20sp" />
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
