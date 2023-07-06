@@ -30,7 +30,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.ChildEventListener;
 public class DashboardFragment extends Fragment {
     private FirebaseAuth mAuth;
-    TextView nama_admin, countUser;
+    TextView nama_admin, countResep, countUser, countBerita;
     FirebaseFirestore db;
     @Nullable
     @Override
@@ -42,6 +42,47 @@ public class DashboardFragment extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
         nama_admin = view.findViewById(R.id.nama_admin);
+
+        countResep = view.findViewById(R.id.count_resep);
+        countUser = view.findViewById(R.id.countUser);
+        countBerita = view.findViewById(R.id.count_berita);
+
+        // Retrieve the count from the table
+        FirebaseFirestore.getInstance().collection("Reseps")
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    int entryCount = queryDocumentSnapshots.size();
+                    // Update the UI with the entry count
+                    countResep.setText(String.valueOf(entryCount));
+                })
+                .addOnFailureListener(e -> {
+                    // Handle any errors
+                });
+
+        FirebaseFirestore.getInstance().collection("Beritas")
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    int entryCount = queryDocumentSnapshots.size();
+                    // Update the UI with the entry count
+                    countBerita.setText(String.valueOf(entryCount));
+                })
+                .addOnFailureListener(e -> {
+                    // Handle any errors
+                });
+
+        FirebaseFirestore.getInstance().collection("Users")
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    int entryCount = queryDocumentSnapshots.size();
+                    // Update the UI with the entry count
+                    countUser.setText(String.valueOf(entryCount));
+                })
+                .addOnFailureListener(e -> {
+                    // Handle any errors
+                });
+
+
+
         return view;
 
     }
