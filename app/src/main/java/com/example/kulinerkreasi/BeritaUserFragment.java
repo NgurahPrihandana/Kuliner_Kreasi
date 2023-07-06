@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.kulinerkreasi.entities.Berita;
+import com.example.kulinerkreasi.entities.DetailBeritaAdminFragment;
 import com.example.kulinerkreasi.entities.Resep;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -29,6 +32,8 @@ import java.util.List;
 
 public class BeritaUserFragment extends Fragment implements BeritaDataAdapter.OnItemClickListener {
     List<Berita> datalist;
+
+    Bundle bundle = new Bundle();
     @Nullable
 
     @Override
@@ -76,7 +81,17 @@ public class BeritaUserFragment extends Fragment implements BeritaDataAdapter.On
 
     @Override
     public void onItemClick(int position) {
-        Berita berita_item = datalist.get(position);
-        Toast.makeText(getContext(), "Clicked: " + berita_item.getJudul_berita(), Toast.LENGTH_SHORT).show();
+        Berita berita = datalist.get(position);
+        bundle.putString("judul_berita", berita.getJudul_berita());
+        bundle.putString("desc_berita", berita.getDesc_berita());
+        bundle.putString("image", berita.getImageUrl());
+
+        DetailBeritaAdminFragment fragmentDetail = new DetailBeritaAdminFragment();
+        fragmentDetail.setArguments(bundle);
+        FragmentManager fragmentManager = getParentFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.fragment_container, fragmentDetail);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }
