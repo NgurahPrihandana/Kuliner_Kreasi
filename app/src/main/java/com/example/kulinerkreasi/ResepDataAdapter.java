@@ -13,9 +13,15 @@ import java.util.List;
 
 public class ResepDataAdapter extends RecyclerView.Adapter<DataResepViewHolder>{
     private List<Resep> dataList;
+    private OnItemClickListener clickListener;
 
-    public ResepDataAdapter(List<Resep> dataList) {
+
+    public ResepDataAdapter(List<Resep> dataList, OnItemClickListener listener) {
         this.dataList = dataList;
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.clickListener = listener;
     }
 
     @NonNull
@@ -38,7 +44,7 @@ public class ResepDataAdapter extends RecyclerView.Adapter<DataResepViewHolder>{
     }
 
     public interface OnItemClickListener {
-        void onItemClick(Resep data);
+        void onItemClick(int position);
     }
 
     public void setData(List<Resep> newDataList) {

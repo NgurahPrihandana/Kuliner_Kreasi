@@ -37,7 +37,12 @@ public class ResepFragment extends Fragment {
         RecyclerView recyclerView = rootView.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
 
-        ResepDataAdapter adapter = new ResepDataAdapter(new ArrayList<>());
+        ResepDataAdapter adapter = new ResepDataAdapter(new ArrayList<>(), new ResepDataAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+
+            }
+        });
         recyclerView.setAdapter(adapter);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
