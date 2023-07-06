@@ -17,9 +17,9 @@ public class MainActivityUser extends AppCompatActivity {
         public boolean onNavigationItemSelected( MenuItem item) {
             Fragment f = null;
             switch (item.getItemId()) {
-                case R.id.nav_cari:
-                    f = new CariFragment();
-                    break;
+//                case R.id.nav_cari:
+//                    f = new CariFragment();
+//                    break;
                 case R.id.nav_resep_user:
                     f = new ResepUserFragment();
                     break;
@@ -41,7 +41,7 @@ public class MainActivityUser extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_user);
         bottomNavigation = findViewById(R.id.bottom_nav_user);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new BerandaFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new ResepFragment()).commit();
 
         bottomNavigation.setOnNavigationItemSelectedListener(navigation);
     }

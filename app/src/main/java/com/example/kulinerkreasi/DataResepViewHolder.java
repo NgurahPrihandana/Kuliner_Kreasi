@@ -35,12 +35,12 @@ public class DataResepViewHolder extends RecyclerView.ViewHolder{
         });
         imageView = itemView.findViewById(R.id.gambar_resep);
         judul = itemView.findViewById(R.id.judul_resep);
-        rating = itemView.findViewById(R.id.rating);
+//        rating = itemView.findViewById(R.id.rating);
     }
 
     public void bindData(Resep resep) {
         judul.setText(resep.getJudul_resep());
-        rating.setText("5");
+//        rating.setText("5");
     }
 
 

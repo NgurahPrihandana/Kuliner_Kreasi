@@ -86,7 +86,6 @@ public class CariFragment extends Fragment implements ResepDataAdapter.OnItemCli
                         }
 
                         adapter.setData(datalist);
-                        setupRecyclerView();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -108,7 +107,7 @@ public class CariFragment extends Fragment implements ResepDataAdapter.OnItemCli
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 String searchQuery = charSequence.toString().trim();
                 Toast.makeText(getContext(), searchQuery, Toast.LENGTH_SHORT).show();
-                filterData(searchQuery.toString());
+                filterData(searchQuery);
             }
 
             @Override
@@ -121,18 +120,8 @@ public class CariFragment extends Fragment implements ResepDataAdapter.OnItemCli
 
     }
 
-    private void setupRecyclerView() {
-        // Create a separate list to store the filtered data
-        filteredData = new ArrayList<>(datalist);
-
-        // Set up the RecyclerView and adapter with the filtered data
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
-        adapter = new ResepDataAdapter(filteredData, this);
-        recyclerView.setAdapter(adapter);
-    }
-
     private void filterData(String query) {
-        filteredData = new ArrayList<>();
+        filteredData.clear();
         if (query.isEmpty()) {
             filteredData.addAll(datalist);
         } else {
@@ -143,6 +132,7 @@ public class CariFragment extends Fragment implements ResepDataAdapter.OnItemCli
                 }
             }
         }
+        adapter.setData(filteredData); // Update the adapter with the filtered data
     }
 
     @Override

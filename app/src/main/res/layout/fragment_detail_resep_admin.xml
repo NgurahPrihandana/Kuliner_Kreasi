@@ -83,7 +83,7 @@
 
                 <TextView
                     android:id="@+id/judul_resep"
-                    android:layout_width="320dp"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_medium"
                     android:text="Nasi Goreng"
@@ -101,7 +101,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_save_alt_24"
+                        android:src="@drawable/baseline_delete_24"
 
 
                         ></ImageView>
