@@ -86,7 +86,8 @@ public class TambahResepFragment extends Fragment {
                   transaction.replace(R.id.fragment_container, fragmentback);
                   transaction.addToBackStack(null);
                   transaction.commit();
-            })});
+            }
+            });
 
         btnSelectImage.setOnClickListener(new View.OnClickListener() {
             @Override
