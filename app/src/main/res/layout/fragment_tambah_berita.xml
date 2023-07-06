@@ -18,7 +18,7 @@
         android:paddingBottom="20sp">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btn_back_toTambah"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:background="@drawable/back_button"
