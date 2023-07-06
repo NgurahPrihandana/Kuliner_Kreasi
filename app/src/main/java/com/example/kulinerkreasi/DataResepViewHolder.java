@@ -16,11 +16,10 @@ public class DataResepViewHolder extends RecyclerView.ViewHolder implements View
     private ImageView imageView;
     private TextView judul;
     private TextView rating;
-    private AdapterView.OnItemClickListener clickListener;
+    private ResepDataAdapter.OnItemClickListener clickListener;
 
-    public DataResepViewHolder(@NonNull View itemView, AdapterView.OnItemClickListener listener) {
+    public DataResepViewHolder(@NonNull View itemView) {
         super(itemView);
-        clickListener = listener;
 
         itemView.setOnClickListener(this);
         imageView = itemView.findViewById(R.id.gambar_resep);
@@ -44,7 +43,8 @@ public class DataResepViewHolder extends RecyclerView.ViewHolder implements View
     public void onClick(View view) {
         int position = getAdapterPosition();
         if(position != RecyclerView.NO_POSITION) {
-//            Resep resep = data
+            clickListener.onItemClick(position);
         }
     }
+
 }

@@ -30,8 +30,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ResepUserFragment extends Fragment {
+public class ResepUserFragment extends Fragment{
     LinearLayout keHalamanSimpan, keHalamanRecook;
+    List<Resep> datalist;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
@@ -42,7 +43,13 @@ public class ResepUserFragment extends Fragment {
         RecyclerView recyclerView = rootView.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
 
-        ResepDataAdapter adapter = new ResepDataAdapter(new ArrayList<>());
+        ResepDataAdapter adapter = new ResepDataAdapter(new ArrayList<>(), new ResepDataAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Toast.makeText(getContext(), "Heyy",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
         recyclerView.setAdapter(adapter);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -52,7 +59,7 @@ public class ResepUserFragment extends Fragment {
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                        List<Resep> datalist = new ArrayList<>();
+                        datalist = new ArrayList<>();
                         for(QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
                             String judul_resep = documentSnapshot.getString("judul_resep");
                             String minimal = documentSnapshot.getString("minimal");
@@ -79,6 +86,8 @@ public class ResepUserFragment extends Fragment {
 
     }
 
-
-
+//    @Override
+//    public void onItemClick(int position) {
+//        Resep resep = datalist.get(position);
+//    }
 }
