@@ -2,6 +2,7 @@ package com.example.kulinerkreasi;
 
 import static android.content.ContentValues.TAG;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -25,6 +26,8 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.kulinerkreasi.entities.Berita;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -43,12 +46,13 @@ import java.util.UUID;
 
 public class TambahBeritaFragment extends Fragment {
     private EditText edt_judul_berita, edt_desc_berita;
-    private Button btn_submit, btn_select_image;
+    private Button btn_submit, btn_select_image, btn_back;
 
     private ImageView imageViewPreview;
 
     private Uri selectedImageUri;
     FirebaseFirestore db;
+    @SuppressLint("MissingInflatedId")
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -60,7 +64,7 @@ public class TambahBeritaFragment extends Fragment {
         btn_submit = rootView.findViewById(R.id.btn_simpan);
         btn_select_image = rootView.findViewById(R.id.btnSelectImage);
         imageViewPreview = rootView.findViewById(R.id.imageViewPreview);
-
+        btn_back = rootView.findViewById(R.id.btn_back_toTambah);
         btn_select_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,6 +85,20 @@ public class TambahBeritaFragment extends Fragment {
                 saveBeritaData(judul_berita, desc_berita);
             }
         });
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TambahFragment fragmentback = new TambahFragment();
+                FragmentManager fragmentManager = getParentFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.replace(R.id.fragment_container, fragmentback);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+
         return rootView;
     }
 

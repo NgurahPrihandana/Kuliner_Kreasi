@@ -26,6 +26,8 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.viewmodel.CreationExtras;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -54,7 +56,8 @@ public class TambahResepFragment extends Fragment {
     private Uri selectedImageUri;
 
     private EditText edt_judul_resep, edt_minimal, edt_maksimal, edt_estimasi, edt_bahan, edt_langkah;
-    private Button btnSelectImage, btn_submit;
+
+    private Button btnSelectImage, btn_submit, btn_back;
     FirebaseFirestore db;
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -72,6 +75,19 @@ public class TambahResepFragment extends Fragment {
         btnSelectImage = rootView.findViewById(R.id.btnSelectImage);
         btn_submit = rootView.findViewById(R.id.submit_menu);
         imageViewPreview = rootView.findViewById(R.id.imageViewPreview);
+        btn_back = rootView.findViewById(R.id.btn_back_toTambah);
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                  TambahFragment fragmentback = new TambahFragment();
+                  FragmentManager fragmentManager = getParentFragmentManager();
+                  FragmentTransaction transaction = fragmentManager.beginTransaction();
+                  transaction.replace(R.id.fragment_container, fragmentback);
+                  transaction.addToBackStack(null);
+                  transaction.commit();
+            }
+            });
 
         btnSelectImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +98,8 @@ public class TambahResepFragment extends Fragment {
                 pickImageActivityResultLauncher.launch(intent);
             }
         });
+
+
 
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +114,8 @@ public class TambahResepFragment extends Fragment {
                 saveResepData(judul_resep, minimal, maksimal, estimasi, bahan, langkah);
             }
         });
+
+
 
         return rootView;
     }
