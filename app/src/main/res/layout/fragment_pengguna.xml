@@ -20,30 +20,23 @@
         android:paddingRight="40sp"
         android:paddingBottom="20sp">
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/back_button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginStart="24dp"
             android:fontFamily="@font/poppins"
-            android:text="Pengguna"
+            android:text="Info Admin"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textFontWeight="600"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/button2"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.609" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -55,33 +48,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_marginTop="20dp"
                 android:layout_height="wrap_content"
                 android:paddingLeft="30dp"
                 android:paddingVertical="20dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:background="@color/white"
+
                 >
-                
+
                 <TextView
+                    android:textSize="17sp"
+                    android:textFontWeight="500"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
-                    android:textFontWeight="500"
-                    android:textSize="17sp"
                     android:text="Nama Lengkap : "/>
 
                 <TextView
+                    android:textSize="17sp"
+                    android:textFontWeight="400"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
-                    android:textFontWeight="500"
-                    android:textSize="17sp"
                     android:text="Putu Mia Setya Utami"/>
             </LinearLayout>
 
@@ -91,55 +85,56 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="30dp"
                 android:paddingVertical="20dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:background="@color/white"
                 >
 
                 <TextView
+                    android:textSize="17sp"
+                    android:textFontWeight="500"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
-                    android:textFontWeight="500"
-                    android:textSize="17sp"
                     android:text="Nama Pengguna : "/>
 
                 <TextView
+                    android:textSize="17sp"
+                    android:textFontWeight="400"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
-                    android:textFontWeight="500"
-                    android:textSize="17sp"
                     android:text="Mia"/>
             </LinearLayout>
 
             <LinearLayout
+
                 android:layout_width="match_parent"
                 android:layout_marginTop="20dp"
                 android:layout_height="wrap_content"
                 android:paddingLeft="30dp"
                 android:paddingVertical="20dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:background="@color/white"
                 >
 
                 <TextView
+                    android:textSize="17sp"
+                    android:textFontWeight="500"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
-                    android:textFontWeight="500"
-                    android:textSize="17sp"
                     android:text="Tanggal Lahir : "/>
 
                 <TextView
+                    android:textSize="17sp"
+                    android:textFontWeight="400"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
-                    android:textFontWeight="500"
-                    android:textSize="17sp"
                     android:text="12 Desember 2002"/>
             </LinearLayout>
 
@@ -149,26 +144,26 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="30dp"
                 android:paddingVertical="20dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:background="@color/white"
                 >
 
                 <TextView
+                    android:textSize="17sp"
+                    android:textFontWeight="500"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
-                    android:textFontWeight="500"
-                    android:textSize="17sp"
                     android:text="Alamat : "/>
 
                 <TextView
+                    android:textSize="17sp"
+                    android:textFontWeight="400"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
-                    android:textFontWeight="500"
-                    android:textSize="17sp"
                     android:text="Jalan 1 Apple Park Way, CA"/>
             </LinearLayout>
 
@@ -178,57 +173,59 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="30dp"
                 android:paddingVertical="20dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:background="@color/white"
                 >
 
                 <TextView
+                    android:textSize="17sp"
+                    android:textFontWeight="500"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
-                    android:textFontWeight="500"
-                    android:textSize="17sp"
                     android:text="Nomor Telepon : "/>
 
                 <TextView
+                    android:textSize="17sp"
+                    android:textFontWeight="400"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
-                    android:textFontWeight="500"
-                    android:textSize="17sp"
                     android:text="081385233668"/>
             </LinearLayout>
 
             <LinearLayout
+
                 android:layout_width="match_parent"
                 android:layout_marginTop="20dp"
                 android:layout_height="wrap_content"
                 android:paddingLeft="30dp"
                 android:paddingVertical="20dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:background="@color/white"
                 >
 
                 <TextView
+                    android:textSize="17sp"
+                    android:textFontWeight="500"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
-                    android:textFontWeight="500"
-                    android:textSize="17sp"
                     android:text="Jenis Kelamin : "/>
 
                 <TextView
+                    android:textSize="17sp"
+                    android:textFontWeight="400"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
-                    android:textFontWeight="500"
-                    android:textSize="17sp"
                     android:text="Laki-Laki"/>
-            </LinearLayout>
+            </LinearLayout
+                >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -236,28 +233,37 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="30dp"
                 android:paddingVertical="20dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:background="@color/white"
                 >
 
                 <TextView
+                    android:textSize="17sp"
+                    android:textFontWeight="500"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
-                    android:textFontWeight="500"
-                    android:textSize="17sp"
                     android:text="Email : "/>
 
                 <TextView
+                    android:textSize="17sp"
+                    android:textFontWeight="400"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
-                    android:textFontWeight="500"
-                    android:textSize="17sp"
                     android:text="miasetya12@gmail.com"/>
             </LinearLayout>
+            <Button
+                android:id="@+id/buttonOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="Keluar"
+                android:paddingHorizontal="30sp"
+                android:layout_marginVertical="20dp"
+                android:layout_gravity="center"/>
         </LinearLayout>
     </ScrollView>
 

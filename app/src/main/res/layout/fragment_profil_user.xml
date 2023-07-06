@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="30dp"
                 android:paddingVertical="20dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:background="@color/white"
 
                 >
@@ -68,7 +68,7 @@
 
                 <TextView
                     android:textSize="17sp"
-                    android:textFontWeight="500"
+                    android:textFontWeight="400"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="30dp"
                 android:paddingVertical="20dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:background="@color/white"
                 >
 
@@ -97,7 +97,7 @@
 
                 <TextView
                     android:textSize="17sp"
-                    android:textFontWeight="500"
+                    android:textFontWeight="400"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
@@ -112,7 +112,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="30dp"
                 android:paddingVertical="20dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:background="@color/white"
                 >
 
@@ -127,7 +127,7 @@
 
                 <TextView
                     android:textSize="17sp"
-                    android:textFontWeight="500"
+                    android:textFontWeight="400"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
@@ -141,7 +141,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="30dp"
                 android:paddingVertical="20dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:background="@color/white"
                 >
 
@@ -156,7 +156,7 @@
 
                 <TextView
                     android:textSize="17sp"
-                    android:textFontWeight="500"
+                    android:textFontWeight="400"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
@@ -170,7 +170,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="30dp"
                 android:paddingVertical="20dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:background="@color/white"
                 >
 
@@ -185,7 +185,7 @@
 
                 <TextView
                     android:textSize="17sp"
-                    android:textFontWeight="500"
+                    android:textFontWeight="400"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
@@ -200,7 +200,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="30dp"
                 android:paddingVertical="20dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:background="@color/white"
                 >
 
@@ -215,7 +215,7 @@
 
                 <TextView
                     android:textSize="17sp"
-                    android:textFontWeight="500"
+                    android:textFontWeight="400"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
@@ -230,7 +230,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="30dp"
                 android:paddingVertical="20dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:background="@color/white"
                 >
 
@@ -245,14 +245,24 @@
 
                 <TextView
                     android:textSize="17sp"
-                    android:textFontWeight="500"
+                    android:textFontWeight="400"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/black"
                     android:text="miasetya12@gmail.com"/>
             </LinearLayout>
+            <Button
+                android:id="@+id/buttonOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="Keluar"
+                android:paddingHorizontal="30sp"
+                android:layout_marginVertical="20dp"
+                android:layout_gravity="center"/>
         </LinearLayout>
+
     </ScrollView>
 
 </LinearLayout>
