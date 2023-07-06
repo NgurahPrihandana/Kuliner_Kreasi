@@ -108,6 +108,7 @@ android:paddingVertical="10sp">
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
+                android:id="@+id/count_resep"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:fontFamily="@font/poppins"
@@ -143,7 +144,7 @@ android:paddingVertical="10sp">
             android:layout_width="169dp"
             android:layout_height="28dp"
             android:fontFamily="@font/poppins"
-            android:text="Jumlah Resep"
+            android:text="Jumlah Berita"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textFontWeight="600"
@@ -154,7 +155,7 @@ android:paddingVertical="10sp">
             app:layout_constraintTop_toTopOf="parent"></TextView>
 
         <LinearLayout
-            android:id="@+id/textView4"
+            android:id="@+id/textViewBerita"
             android:layout_width="171dp"
             android:layout_height="114dp"
             android:layout_alignParentTop="true"

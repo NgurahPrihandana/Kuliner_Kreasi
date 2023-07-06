@@ -1,19 +1,27 @@
 package com.example.kulinerkreasi;
 
+import static android.content.ContentValues.TAG;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseUser;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.DatabaseReference;
@@ -22,7 +30,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.ChildEventListener;
 public class DashboardFragment extends Fragment {
     private FirebaseAuth mAuth;
-    TextView tampil_nama;
+    TextView nama_admin, countUser;
     FirebaseFirestore db;
     @Nullable
     @Override
@@ -32,8 +40,8 @@ public class DashboardFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
         mAuth = FirebaseAuth.getInstance();
-
-        tampil_nama = view.findViewById(R.id.nama_admin);
+        db = FirebaseFirestore.getInstance();
+        nama_admin = view.findViewById(R.id.nama_admin);
         return view;
 
     }
@@ -42,13 +50,32 @@ public class DashboardFragment extends Fragment {
     public void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
 
-                String userId = mAuth.getCurrentUser().getEmail();
-                tampil_nama.setText(userId);
+        String userId = mAuth.getCurrentUser().getUid();
 
-        } else {
-            // User is not signed in, handle accordingly
-        }
+        db.getInstance().collection("Users").document(userId)
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if(documentSnapshot.exists()) {
+                            String tampil_nama = documentSnapshot.getString("nama_pengguna");
+                            nama_admin.setText(tampil_nama);
+                        } else {
+                            Toast.makeText(getContext(), "User document does not exist.", Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // Error occurred while retrieving user role
+                        Log.w(TAG, "Error when fetching data", e);
+                        Toast.makeText(getContext(), "Error occurred. Please try again.", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
     }
+
 }

@@ -17,9 +17,6 @@ public class MainActivityUser extends AppCompatActivity {
         public boolean onNavigationItemSelected( MenuItem item) {
             Fragment f = null;
             switch (item.getItemId()) {
-                case R.id.nav_beranda:
-                    f = new BerandaFragment();
-                    break;
                 case R.id.nav_cari:
                     f = new CariFragment();
                     break;
