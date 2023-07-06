@@ -15,13 +15,12 @@ public class ResepDataAdapter extends RecyclerView.Adapter<DataResepViewHolder>{
     private List<Resep> dataList;
     private OnItemClickListener clickListener;
 
-
-    public ResepDataAdapter(List<Resep> dataList, OnItemClickListener listener) {
-        this.dataList = dataList;
-    }
-
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.clickListener = listener;
+    }
+
+    public ResepDataAdapter(List<Resep> dataList) {
+        this.dataList = dataList;
     }
 
     @NonNull
