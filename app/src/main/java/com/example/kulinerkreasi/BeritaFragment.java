@@ -31,6 +31,8 @@ import java.util.List;
 public class BeritaFragment extends Fragment implements BeritaDataAdapter.OnItemClickListener{
     List<Berita> datalist;
 
+    String documentId;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
@@ -56,6 +58,7 @@ public class BeritaFragment extends Fragment implements BeritaDataAdapter.OnItem
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
 
                         for(QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+                            documentId = documentSnapshot.getId();
                             String judul_berita = documentSnapshot.getString("judul_berita");
                             String deskripsi = documentSnapshot.getString("desc_berita");
                             String image = documentSnapshot.getString("imageBerita");
